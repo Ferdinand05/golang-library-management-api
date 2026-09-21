@@ -51,4 +51,4 @@ jobs:
           -database "postgres://postgres:root@localhost:5432/library_management_test?sslmode=disable" \
           up
     - name: Test
-      run: go test -v ./internal... -count=1
+      run: go test -v ./internal... -count=1 -p 1
