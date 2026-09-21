@@ -37,6 +37,14 @@ jobs:
 
     - name: Build
       run: go build -v ./...
-
+    - name: run migration
+      run: |
+        docker run --rm \
+          --network host \
+          -v ${{ github.workspace }}/migrations:/migrations \
+          migrate/migrate \
+          -path=/migrations \
+          -database "postgres://postgres:root@localhost:5432/library_management_test?sslmode=disable" \
+          up
     - name: Test
       run: go test -v ./internal... -count=1
