@@ -11,6 +11,8 @@ RUN go build -o library-api ./cmd
 
 FROM alpine:3.22
 
+RUN apk --no-cache add ca-certificates
+
 WORKDIR /app
 
 COPY --from=builder /app/library-api .
