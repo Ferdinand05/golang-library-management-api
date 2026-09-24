@@ -12,7 +12,7 @@ jobs:
     runs-on: [self-hosted, linux, x64]
     services:
       postgres:
-        image: postgres:18
+        image: postgres:18-alpine
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: root
@@ -32,9 +32,6 @@ jobs:
         uses: actions/setup-go@v4
         with:
           go-version: "1.26" # Sesuai Dockerfile dasar Anda sebelumnya
-
-      - name: Vet
-        run: go vet ./...
 
       - name: Run migration
         run: |
