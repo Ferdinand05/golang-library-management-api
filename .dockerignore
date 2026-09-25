@@ -1,3 +1,6 @@
+.github
+_.test
+_.md
 .env
 .git
 .gitignore
