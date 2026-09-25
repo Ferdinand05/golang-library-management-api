@@ -50,7 +50,7 @@ jobs:
         with:
           go-version: "1.26"
 
-      - name: Check formatting
+      - name: Check formattings
         run: |
           gofmt -w .
 
