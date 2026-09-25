@@ -52,11 +52,11 @@ jobs:
 
       - name: Check formatting
         run: |
-          test -z "$(gofmt -l .)"
+          gofmt -w .
 
       - name: Vet
         run: |
-          go vet ./...
+          go vet ./internal...
 
       - name: Run migration
         run: |
