@@ -58,7 +58,7 @@ jobs:
         run: |
           go vet ./internal...
 
-      - name: Run migration
+      - name: Run migrations
         run: |
           docker run --rm \
             --network host \
