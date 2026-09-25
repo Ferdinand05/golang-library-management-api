@@ -65,13 +65,13 @@ jobs:
             -v "${{ github.workspace }}/migrations:/migrations" \
             migrate/migrate \
             -path=/migrations \
-            -database "postgres://postgres:root@localhost:5433/library_management_test?sslmode=disable" \
+            -database "postgres://postgres:root@localhost:5432/library_management_test?sslmode=disable" \
             up
 
       - name: Test
         env:
           DB_HOST: localhost
-          DB_PORT: 5433
+          DB_PORT: 5432
           DB_USER: postgres
           DB_PASSWORD: root
           DB_NAME: library_management_test
